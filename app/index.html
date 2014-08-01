@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Emberlink</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/emberlink.css">
+  </head>
+  <body>
+    <script>
+      window.EmberlinkENV = {{ENV}};
+      window.EmberENV = window.EmberlinkENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/emberlink.js"></script>
+    <script>
+      window.Emberlink = require('emberlink/app')['default'].create(EmberlinkENV.APP);
+    </script>
+  </body>
+</html>
