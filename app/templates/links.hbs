@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>All links</h1>
+</div>
+
+{{#link-to "link/new" class="btn btn-primary"}}
+Add a link
+{{/link-to}}
+
+<ul>
+  {{#each}}
+    <li>
+      <a {{bind-attr href=url}}>{{name}}</a>
+      <p>
+        {{description}}
+      </p>
+    </li>
+  {{/each}}
+</ul>
