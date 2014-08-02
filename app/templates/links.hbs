@@ -6,13 +6,18 @@
 Add a link
 {{/link-to}}
 
-<ul>
-  {{#each}}
-    <li>
-      <a {{bind-attr href=url}}>{{name}}</a>
-      <p>
-        {{description}}
-      </p>
-    </li>
-  {{/each}}
-</ul>
+<div class="row">
+  <ul class="unstyled">
+    {{#each}}
+      <li>
+        <h4><a {{bind-attr href=url}}>{{name}}</a></h4>
+        <p>
+          {{description}}
+        </p>
+        {{#if created_at}}
+          <span class="muted">Posted at {{format-date created_at "DD/MM/YY"}}</span>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
