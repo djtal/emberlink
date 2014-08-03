@@ -17,6 +17,8 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+app.import('vendor/firebase/firebase.js');
+app.import('vendor/emberfire/dist/emberfire.min.js');
 app.import('vendor/moment/min/moment-with-locales.js');
 
 module.exports = app.toTree();

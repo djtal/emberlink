@@ -1,0 +1,6 @@
+<form class="form-signup" role="form">
+  <h2 class="form-signin-heading">Create an account</h2>
+  {{input type="email" valueBinding="email" class="form-control" placeholder="Email address"}}
+  {{input type="password" valueBinding="password" class="form-control" placeholder="Password"}}
+  <button class="btn btn-lg btn-primary btn-block" type="submit" {{action 'sign_up'}}>Create</button>
+</form>
