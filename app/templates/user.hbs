@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1>My profile</h1>
+</div>
+
+<form role="form">
+  <div class="form-group">
+    <label for="linkName">Email</label>
+    {{input class="form-control" id="userEmail" placeholder="last name" valueBinding="model.email"}}
+  </div>
+  <div class="form-group">
+    <label for="linkUrl">First Name</label>
+    {{input  class="form-control" id="userFirstName" placeholder="first name..." valueBinding="model.firstName"}}
+  </div>
+  <div class="form-group">
+    <label for="linkName">Last Name</label>
+  {{input class="form-control" id="userLastName" placeholder="last name" valueBinding="model.lastName"}}
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" {{action 'save'}}>Update</button>
+  or
+  {{#link-to "links" class="btn btn-default"}}Cancel{{/link-to}}
+</form>
