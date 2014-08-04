@@ -16,12 +16,16 @@
         {{/link-to}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        {{#link-to "sessions.sign_in" tagName="li"}}
-          <a {{bind-attr href="view.href"}}>Sign In</a>
-        {{/link-to}}
         {{#if isAuthenticated}}
           {{#link-to "sessions.sign_out" tagName="li"}}
             <a {{bind-attr href="view.href"}}>Sign Out</a>
+          {{/link-to}}
+        {{else}}
+        {{#link-to "sign_up" tagName="li"}}
+          <a {{bind-attr href="view.href"}}>Sign Up</a>
+        {{/link-to}}
+          {{#link-to "sessions.sign_in" tagName="li"}}
+            <a {{bind-attr href="view.href"}}>Sign In</a>
           {{/link-to}}
         {{/if}}
       </ul>
