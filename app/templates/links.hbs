@@ -17,6 +17,7 @@ Add a link
         {{#if created_at}}
           <span class="muted">Posted at {{format-date created_at "DD/MM/YY"}}</span>
         {{/if}}
+        By {{user.fullName}}
       </li>
     {{/each}}
   </ul>

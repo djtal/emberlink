@@ -5,6 +5,8 @@ export default DS.Model.extend({
   uid: DS.attr('string'),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
+  links: DS.hasMany('link'),
+  
   fullName: function() {
     return [this.get('firstName'), this.get('lastName')].join(' ');
   }.property('firstName', 'lastName'),
