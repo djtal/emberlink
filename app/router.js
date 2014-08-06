@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('sign_in', { path: '/sign_in' });
   });
   this.route('user');
+  this.route('userLinks', { path: '/links/:user_id' });
 });
 
 export default Router;

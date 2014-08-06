@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1>Links of {{user.fullName}}</h1>
+</div>
+
+<div class="row">
+  <ul class="unstyled">
+    {{#each}}
+      {{link-view link=this tag='li'}}
+    {{/each}}
+  </ul>
+</div>
