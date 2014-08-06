@@ -2,23 +2,17 @@
   <h1>All links</h1>
 </div>
 
-{{#link-to "link/new" class="btn btn-primary"}}
-Add a link
-{{/link-to}}
+<div class="btn-toolbar">
+  {{#link-to "link/new" class="btn btn-primary"}}
+  Add a link
+  {{/link-to}}
+</div>
+
 
 <div class="row">
   <ul class="unstyled">
     {{#each}}
-      <li>
-        <h4><a {{bind-attr href=url}}>{{name}}</a></h4>
-        <p>
-          {{description}}
-        </p>
-        {{#if created_at}}
-          <span class="muted">Posted at {{format-date created_at "DD/MM/YY"}}</span>
-        {{/if}}
-        By {{user.fullName}}
-      </li>
+      {{link-view link=this tag='li'}}
     {{/each}}
   </ul>
 </div>
