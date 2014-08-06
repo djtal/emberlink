@@ -14,6 +14,7 @@ Router.map(function() {
   });
   this.route('user');
   this.route('userLinks', { path: '/links/:user_id' });
+  this.route('links/today');
 });
 
 export default Router;

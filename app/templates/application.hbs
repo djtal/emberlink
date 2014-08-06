@@ -11,8 +11,11 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        {{#link-to "links/today" tagName="li"}}
+          <a {{bind-attr href="view.href"}}>Today Links</a>
+        {{/link-to}}
         {{#link-to "links" tagName="li"}}
-          <a {{bind-attr href="view.href"}}>Links</a>
+          <a {{bind-attr href="view.href"}}>All Links</a>
         {{/link-to}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
