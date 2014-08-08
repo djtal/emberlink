@@ -1,7 +1,11 @@
+<div {{action 'markAsRead' on="mouseEnter"}}>
 <h4><a {{bind-attr href=link.url}} target='_blank'>{{link.name}}</a></h4>
 <p>
   {{link.description}}
 </p>
+{{#unless isFavorite}}
+<button {{action 'favorite'}} class="btn btn-default btn-sm">Favorite</button>
+{{/unless}}
 {{#if link.created_at}}
   <span class="muted">Posted at {{format-date link.created_at "DD/MM/YY"}}</span> -
 {{/if}}
@@ -9,3 +13,4 @@ By
 {{#link-to "userLinks" link.user.id}}
   {{link.user.fullName}}
 {{/link-to}}
+</div>

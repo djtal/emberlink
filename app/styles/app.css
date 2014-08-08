@@ -10,3 +10,10 @@ html, body {
   padding: 15px;
   margin: 0 auto;
 }
+
+.link {
+  padding: 5px;
+}
+.link:hover {
+  background-color: #4E5D6C;
+}
