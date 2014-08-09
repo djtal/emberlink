@@ -5,7 +5,7 @@ export default Ember.ObjectController.extend({
     save: function(){
       this.get('model').save().then(function(){
         console.log("successfully save user");
-      })
+      });
     }
   }
 });

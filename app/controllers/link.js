@@ -4,15 +4,6 @@ export default Ember.ObjectController.extend({
   needs: ['application'],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
 
-  isFavorite: function(){
-    var _this = this;
-    var res = false;
-    this.get('currentUser.favorites').then(function(favs){
-      res = !Ember.isEmpty(favs.findBy('link.id', _this.get('id')));
-    });
-    return res;
-  }.property('currentUser.favorites'),
-
   actions: {
     favorite: function(){
       var _this = this;
@@ -25,6 +16,14 @@ export default Ember.ObjectController.extend({
         _this.get('currentUser').save().then(function(){
           fav.save();
         });
+      });
+    },
+
+    unfavorite: function(){
+      var _this = this;
+      this.get('currentUser.favorites').then(function(favs){
+        var fav = favs.findBy('link.id', _this.get('model.id'));
+        fav.deleteRecord();
       });
     }
   }
