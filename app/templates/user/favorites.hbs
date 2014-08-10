@@ -1,0 +1,14 @@
+<div class="col-md-4">
+  <div class="list-group">
+    {{#link-to "user" class="list-group-item"}}My Profile{{/link-to}}
+    {{#link-to "user/favorites" class="list-group-item"}}My Favorites{{/link-to}}
+  </div>
+</div>
+
+<div class="col-md-8">
+  <ul class="unstyled">
+    {{#each}}
+      {{link-view link=this.link tag='li' simpleMode=true}}
+    {{/each}}
+  </ul>
+</div>

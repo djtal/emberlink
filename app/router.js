@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('user');
   this.route('userLinks', { path: '/links/:user_id' });
   this.route('links/today');
+  this.route('user/favorites');
 });
 
 export default Router;
