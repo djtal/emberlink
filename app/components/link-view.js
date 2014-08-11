@@ -3,7 +3,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isRead: false,
   classNames: ['link'],
-
+  favoritesCount: Ember.computed.alias('link.favorites.length'),
+  favorited: Ember.computed.gt('link.favorites.length', 0),
   // may be use Ember.computed.and for currentUser and isFavorite. Should try it
   isFavorite: function(){
     var _this = this;

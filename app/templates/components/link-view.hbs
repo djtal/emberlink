@@ -23,4 +23,9 @@
       {{link.user.fullName}}
     {{/link-to}}
   {{/unless}}
+  <ul class="list-inline">
+    {{#if favorited}}
+      <li><i class="fa fa-star"></i>Favorited {{favoritesCount}} times.</li>
+    {{/if}}
+  </ul>
 </div>

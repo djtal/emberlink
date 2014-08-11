@@ -14,7 +14,14 @@ export default Ember.ObjectController.extend({
       this.get('currentUser.favorites').then(function(favs){
         favs.addObject(fav);
         _this.get('currentUser').save().then(function(){
-          fav.save();
+          fav.save().then(function() {
+            console.log("successfully save fav");
+            _this.get('model.favorites').then(function(fs){
+              console.log("add fav to link");
+              fs.addObject(fav);
+              _this.get('model').save();
+            })
+          });
         });
       });
     },
@@ -23,7 +30,9 @@ export default Ember.ObjectController.extend({
       var _this = this;
       this.get('currentUser.favorites').then(function(favs){
         var fav = favs.findBy('link.id', _this.get('model.id'));
-        fav.deleteRecord();
+        console.log("un fav ");
+        console.log(fav);
+        fav.destroyRecord();
       });
     }
   }
