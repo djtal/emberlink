@@ -6,6 +6,15 @@
   <ul class="unstyled">
     {{#each}}
       {{link-view link=this tag='li'}}
+    {{else}}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          Sorry no links posted today.&nbsp;
+          {{#if isAuthenticated}}
+            {{#link-to "link/new" class="btn btn-primary"}}Be the first to post today{{/link-to}}
+          {{/if}}
+        </div>
+      </div>
     {{/each}}
   </ul>
 </div>
