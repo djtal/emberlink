@@ -4,14 +4,16 @@
     {{link.description}}
   </p>
   {{#unless simpleMode}}
-    {{#if isFavorite}}
-      <button {{action 'unfavorite'}} class="btn btn-default btn-sm" title="un fav this link">
-      <i class="fa fa-star"></i>
-      </button>
-    {{else}}
-      <button {{action 'favorite'}} class="btn btn-default btn-sm" title="fav this link">
-      <i class="fa fa-star-o"></i>
-      </button>
+    {{#if currentUser}}
+      {{#if isFavorite}}
+        <button {{action 'unfavorite'}} class="btn btn-default btn-sm" title="un fav this link">
+        <i class="fa fa-star"></i>
+        </button>
+      {{else}}
+        <button {{action 'favorite'}} class="btn btn-default btn-sm" title="fav this link">
+        <i class="fa fa-star-o"></i>
+        </button>
+      {{/if}}
     {{/if}}
   {{/unless}}
   {{#if link.created_at}}
