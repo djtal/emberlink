@@ -24,6 +24,12 @@
       <i class="fa fa-calendar-o"></i>
       On {{format-date link.created_at "DD/MM/YY"}}
     </li>
+    <li class="twitter-share">
+      {{twitter-share data-url=link.url
+                data-text=link.description
+                data-size="medium"
+                data-count="none"}}
+    </li>
     {{#if currentUser}}
       <li>
         {{#if isFavorite}}
