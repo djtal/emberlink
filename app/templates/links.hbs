@@ -5,16 +5,15 @@
 <div class="btn-toolbar">
   {{#if isAuthenticated}}
     {{#link-to "link/new" class="btn btn-primary"}}
-      Add a link
+      <i class="fa fa-plus"></i>&nbsp;
+      Add your link
     {{/link-to}}
   {{/if}}
 </div>
 
 
-<div class="row">
-  <ul class="unstyled">
-    {{#each}}
-      {{link-view link=this tag='li' favoriteAction='favorite' unFavoriteAction='unfavorite' currentUser=currentUser}}
-    {{/each}}
-  </ul>
-</div>
+<ul class="list-unstyled links">
+  {{#each}}
+    {{link-view link=this tag='li' favoriteAction='favorite' unFavoriteAction='unfavorite' currentUser=currentUser}}
+  {{/each}}
+</ul>

@@ -2,10 +2,8 @@
   <h1>Links of {{user.fullName}}</h1>
 </div>
 
-<div class="row">
-  <ul class="unstyled">
-    {{#each}}
-      {{link-view link=this tag='li'}}
-    {{/each}}
-  </ul>
-</div>
+<ul class="list-unstyled links">
+  {{#each}}
+    {{link-view link=this tag='li'}}
+  {{/each}}
+</ul>

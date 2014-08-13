@@ -17,6 +17,12 @@ html, body {
 .link {
   padding: 5px;
 }
-.link:hover {
-  background-color: #4E5D6C;
+
+li.link {
+  margin-bottom: 5px;
+}
+
+.link-content{
+  border-left: solid 3px #4E5D6C;
+  padding-left: 5px;
 }
